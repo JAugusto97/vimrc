@@ -1,3 +1,4 @@
+"test
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
 "       Amir Salihefendic — @amix3k
@@ -77,6 +78,10 @@ endif
 
 "Always show current position
 set ruler
+
+noremap <leader>0 :tablast<cr>
+
+let g:jedi#force_py_version = 3
 
 " Height of the command bar
 set cmdheight=2
@@ -210,12 +215,6 @@ map <c-space> ?
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
@@ -318,8 +317,10 @@ map <leader>s? z=
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
+" Quickly closes the file (changed by Joao Augusto)
+map <leader>q :q <cr>
+
+map <leader>wq :wq <cr>
 
 " Quickly open a markdown buffer for scribble
 map <leader>x :e ~/buffer.md<cr>
